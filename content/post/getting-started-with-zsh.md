@@ -1,7 +1,7 @@
 ---
 title: "Zsh with Oh My Zsh"
 date: 2020-08-08T04:06:11+05:30
-draft: true
+draft: flase
 ---
 
 **Z shell** or **Zsh** is a unix shell that was written by Paul Falstad in 1990. The name zsh derives from the name of Yale professor Zhong Shao (then a teaching assistant at Princeton University) — Paul Falstad regarded Shao's login-id, "zsh", as a good name for a shell.
