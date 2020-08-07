@@ -1,0 +1,84 @@
+baseURL: https://example.com
+languageCode: en-us
+defaultContentLanguage: en
+title: Arwiki
+theme: arwiki
+enableGitInfo: true
+
+taxonomies:
+  tag: tags
+
+permalinks:
+  post: /:filename/
+
+imaging:
+  quality: 99
+
+params:
+  description: An accessibility-friendly Hugo theme, forked, modified and beautified from [the original Cupper Hugo theme](https://github.com/zwbetz-gh/cupper-hugo-theme) project.
+  homeMetaContent: An accessibility-friendly Hugo theme, forked, modified and beautified from the original Cupper Hugo theme.
+  footer: Made with [Hugo](https://gohugo.io/).
+  # For more date formats see https://gohugo.io/functions/format/
+  dateFormat: Jan 2, 2006
+  codePenUser: someUser
+  katex: true
+  darkThemeAsDefault: true
+  hideHeaderLinks: false
+  search: true
+  # A list of custom css files can be provided, which must be placed inside
+  # 'static/'.
+  # This is useful to override just specific css classes, instead of copying
+  # the entire theme's css file to your own site.
+  # Usage:
+  # customCss:
+  #   - css/foo.css # relative path starting from static/
+  #- css/bar.css
+
+menu:
+  nav:
+    - name: Home
+      url: /
+      weight: 1
+    - name: Blog
+      url: /post/
+      weight: 2
+    - name: Tags
+      url: /tags/
+      weight: 3
+    - name: About
+      url: /about/
+      weight: 4
+    - name: RSS
+      url: /index.xml
+      weight: 5
+
+markup:
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute: true
+      autoHeadingID: true
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xHTML: false
+  highlight:
+    codeFences: false
+    hl_Lines: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: monokai
+    tabWidth: 4
+  tableOfContents:
+    endLevel: 6
+    startLevel: 2
