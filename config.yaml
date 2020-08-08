@@ -15,8 +15,8 @@ imaging:
   quality: 99
 
 params:
-  description: An accessibility-friendly Hugo theme, forked, modified and beautified from [the original Cupper Hugo theme](https://github.com/zwbetz-gh/cupper-hugo-theme) project.
-  homeMetaContent: An accessibility-friendly Hugo theme, forked, modified and beautified from the original Cupper Hugo theme.
+  description: "**Abraham's braindump** . Main blog: [abrahamraji.in](https://abrahamraji.in)"
+  homeMetaContent: Abraham's braindump. Main blog: https://abrahamraji.in
   footer: Made with [Hugo](https://gohugo.io/).
   # For more date formats see https://gohugo.io/functions/format/
   dateFormat: Jan 2, 2006
