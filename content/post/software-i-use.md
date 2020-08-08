@@ -18,6 +18,10 @@ This is a list of software that I use. The main purpose for the existence of thi
             My password manager of choice. If you don't use one, you should because if you don't, with the amount of software services we login to, you bet you'll reuse password between services which is a terrible idea. The alternative is to memorize a different 16+ character string for all the services you use. Seriously, use a password manager. Bitwarden works great for my use, has many useful features and is Free Software.  
         - [Sharp Color Picker](https://addons.mozilla.org/en-US/firefox/addon/sharp-color-picker/): \
             Because I like good color combinations and I design stuff from time to time.
+- Secondary: [Ungoogled Chromium](https://github.com/Eloston/ungoogled-chromium/)
+    Bsically Chromium with all the Google bits removed.
+    - Why?\
+        Because I develop websites and I need to make sure the websites I make properly render across various browsers.
 - Text Editor: Emacs
 - Terminal Emulator: St, Gnome Terminal
 - Shell: Zsh
