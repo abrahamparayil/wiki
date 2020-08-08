@@ -25,7 +25,10 @@ This is a list of software that I use. The main purpose for the existence of thi
     Bsically Chromium with all the Google bits removed.
     - Why?\
         Because I develop websites and I need to make sure the websites I make properly render across various browsers.
-- Text Editor: Emacs
-- Terminal Emulator: St, Gnome Terminal
-- Shell: Zsh
-- Desktop Env
+## Text Editor
+ Emacs
+## Terminal Emulator 
+- St
+- Gnome Terminal
+## Shell 
+- Zsh
