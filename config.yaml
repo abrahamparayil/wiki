@@ -16,7 +16,7 @@ imaging:
 
 params:
   description: "**Abraham's braindump** . Main blog: [abrahamraji.in](https://abrahamraji.in)"
-  homeMetaContent: Abraham's braindump. Main blog: https://abrahamraji.in
+  homeMetaContent: Abraham's braindump
   footer: Made with [Hugo](https://gohugo.io/).
   # For more date formats see https://gohugo.io/functions/format/
   dateFormat: Jan 2, 2006
