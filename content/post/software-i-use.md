@@ -15,7 +15,7 @@ This is a list of software that I use. The main purpose for the existence of thi
         - [Adnauseum](http://adnauseum.io): \
             AdNauseam quietly clicks on every blocked ad, registering a visit on ad networks' databases. As the collected data gathered shows an omnivorous click-stream, user tracking, targeting and surveillance become futile.
         - [Bitwarden](https://bitwarden.com/): \
-            My password manager of choice. If you don't use one you should start using one today because if you don't with the amount of software services we login to you bet you'll reuse password between services which is a terrible idea. The alternative is to memorize a different 16+ character string for all the services you use. Seriously use a password manager. Bitwarden works great for my use, has many useful features and is Free Software.  
+            My password manager of choice. If you don't use one, you should because if you don't, with the amount of software services we login to, you bet you'll reuse password between services which is a terrible idea. The alternative is to memorize a different 16+ character string for all the services you use. Seriously, use a password manager. Bitwarden works great for my use, has many useful features and is Free Software.  
         - [Sharp Color Picker](https://addons.mozilla.org/en-US/firefox/addon/sharp-color-picker/): \
             Because I like good color combinations and I design stuff from time to time.
 - Text Editor: Emacs
