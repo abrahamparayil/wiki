@@ -11,6 +11,9 @@ This is a list of software that I use. The main purpose for the existence of thi
     - Why?:
         - Free Software ♥
         - [Google being an absolute d**k. #1](https://uxdesign.cc/mozilla-firefox-google-chrome-monopoly-microsoft-internet-explorer-edge-netscape-navigator-56727b258f54) and [Google being an absolute d**k. #2](https://gadgets.ndtv.com/apps/news/google-chrome-monopoly-complaints-gatekeeper-2044883)
+    - Extensions:
+        - Adnauseum: \
+            AdNauseam quietly clicks on every blocked ad, registering a visit on ad networks' databases. As the collected data gathered shows an omnivorous click-stream, user tracking, targeting and surveillance become futile.
 - Text Editor: Emacs
 - Terminal Emulator: St, Gnome Terminal
 - Shell: Zsh
