@@ -4,6 +4,7 @@ defaultContentLanguage: en
 title: Arwiki
 theme: arwiki
 enableGitInfo: true
+summaryLength: 20
 
 taxonomies:
   tag: tags
