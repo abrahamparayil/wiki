@@ -25,7 +25,11 @@ This is a list of software that I use. The main purpose for the existence of thi
     - Why?\
         Because I develop websites and I need to make sure the websites I make properly render across various browsers.
 ## Text Editor
- Emacs
+### Emacs
+I use emacs for most of my text editing needs and more. Sometime ago I started working on an emacs distribution named [Armacs](https://gitlab.com/avron/armacs) that helps people get started with Emacs. Up until recently I used to for pretty much anything. Recently I started experimenting with [Doom Emacs](https://github.com/hlissner/doom-emacs/) and I've really started liking Evil Mode might actually adopt it to Armacs.
+- Why?
+  - Free Software ♥
+  - You can get a lot done from just Emacs- text editing, git. ssh, Document editor and more!
 ## Terminal Emulator 
 - St
 - Gnome Terminal
