@@ -24,6 +24,8 @@ This is a list of software that I use. The main purpose for the existence of thi
 - Secondary: [Ungoogled Chromium](https://github.com/Eloston/ungoogled-chromium/): basically Chromium with all the Google bits removed.
     - Why?\
         Because I develop websites and I need to make sure the websites I make properly render across various browsers.
+## Operating System
+- Debian 10 [Buster]
 ## Text Editor
 ### Emacs
 I use emacs for most of my text editing needs and more. Sometime ago I started working on an emacs distribution named [Armacs](https://gitlab.com/avron/armacs) that helps people get started with Emacs. Up until recently I used to for pretty much anything. Recently I started experimenting with [Doom Emacs](https://github.com/hlissner/doom-emacs/) and I've really started liking Evil Mode might actually adopt it to Armacs.
