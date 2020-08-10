@@ -26,6 +26,19 @@ This is a list of software that I use. The main purpose for the existence of thi
         Because I develop websites and I need to make sure the websites I make properly render across various browsers.
 ## Operating System
 - Debian 10 [Buster]
+  - Version: 10.5.0
+```sh
+❯ cat /etc/os-release
+PRETTY_NAME="Debian GNU/Linux 10 (buster)"
+NAME="Debian GNU/Linux"
+VERSION_ID="10"
+VERSION="10 (buster)"
+VERSION_CODENAME=buster
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+```
 ## Text Editor
 ### Emacs
 I use emacs for most of my text editing needs and more. Sometime ago I started working on an emacs distribution named [Armacs](https://gitlab.com/avron/armacs) that helps people get started with Emacs. Up until recently I used to for pretty much anything. Recently I started experimenting with [Doom Emacs](https://github.com/hlissner/doom-emacs/) and I've really started liking Evil Mode might actually adopt it to Armacs.
