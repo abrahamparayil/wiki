@@ -12,7 +12,7 @@ I assure you we do not have an unhealthy relationship. This is just my Baby. My 
 - Integrated GPU: Intel HD Graphics 620 
 - Memory: 7846MiB 
 - Storage: 1000GB
-- Screen Resolution: 1920x1080
+- Screen Resolution: 1920x1080 [16:9]
 - WiFi Card: Qualcomm Atheros QCA9377 802.11ac Wireless Network Adapter\
   This little bad boy needs a proprietary firmware to work
 - Ethernet Card: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller
