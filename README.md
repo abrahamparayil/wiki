@@ -1,5 +1,6 @@
 # Abraham's Braindump
 [![pipeline status](https://gitlab.com/avron/wiki/badges/master/pipeline.svg)](https://gitlab.com/avron/wiki/-/commits/master)
+
 This is practically a place where I put things I that aren't mine but would hate to go and search online for,again or just things that don't belong to me that I aquired by fair means. A collection of things I know that aren't mine if you will. My original thoughts or things I believe are my original thoughts go in my [main blog](https://abrahamraji.in/posts)
 
 For those who do not know me, my name is Abraham Raji. I like to make things. I design and build solutions to problems that fascinate me. I consider myself a minimalist who believes in sensible and intuitive design that is beautiful both on the outside as well as under the hood.
