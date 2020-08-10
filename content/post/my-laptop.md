@@ -9,7 +9,7 @@ I assure you we do not have an unhealthy relationship. This is just my Baby. My 
 - Model Number: F5-573G-7536
 - CPU: Intel i7-7500U (4) @ 3.500GHz 
 - Dedicated GPU: NVIDIA GeForce 940MX 
-- Integrated GPU: Intel HD Graphics 620 
+- Integrated GPU: Intel HD Graphics 620 (Kaby Lake GT2)
 - Memory: 7846MiB 
 - Storage: 1000GB
 - Screen Resolution: 1920x1080 [16:9]
