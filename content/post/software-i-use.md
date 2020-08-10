@@ -25,7 +25,7 @@ This is a list of software that I use. The main purpose for the existence of thi
     - Why?\
         Because I develop websites and I need to make sure the websites I make properly render across various browsers.
 ## Operating System
-- Debian 10 [Buster]
+- [Debian 10 [Buster]](https://www.debian.org/)
   - Version: 10.5.0
 ```sh
 ❯ cat /etc/os-release
