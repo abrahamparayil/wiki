@@ -11,25 +11,25 @@ Zsh has features like interactive Tab completion, automated file searching, rege
 
 ### Installing Zsh
 - Debian, Ubuntu and other Debian based disros:
-```sh
+```bash
 $ sudo apt install zsh
 ```
 - Archlinux, Manjaro and other Arch-based distros:
-```sh
+```bash
 $ sudo apt install zsh
 ```
 - Fedora, RHEL, and CentOS:
-```sh
+```bash
 $ sudo dnf install zsh
 ```
 
 ### Installing Oh My Zsh
 - Using Curl
-```sh
+```bash
 $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 - Using Wget
-```sh
+```bash
 $ sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 ```
 
@@ -51,18 +51,18 @@ Here's a list of all the plugins that I use:
 - zsh-syntax-highlighting 
 
 Only two of the above plugins are custom, so we clone them to the custom plugins folder.
-```sh
+```bash
 cd ~/.oh-my-zsh/custom/plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions
 ```
 Then I add the names of the plugins to the list in my `.zshrc`
-```sh
+```bash
 plugins=(colored-man-pages debian emacs git gnu-utils zsh-autosuggestions zsh-syntax-highlighting )
 ```
 ### Theme
 There are a wide variety of themes built-in to oh-my-zsh but my favourite is `Powerlevel10k`. You can install it by running the following command:
-```sh
+```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 This theme is pretty neat and if configured properly can give you a lot of information through the prompt itself. It uses a bunch of icons which you can get through the theme's recomended font Meslo Nerd Font. You can get these fonts by downloading the TTF files given below to your `~/.fonts/` folder
