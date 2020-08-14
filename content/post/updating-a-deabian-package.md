@@ -3,7 +3,7 @@ title: "Updating a Deabian Package"
 date: 2020-08-14T01:05:10+05:30
 url: updating-deb-pkgs 
 tags: ["debian", "gnu/linux","packaging"]
-draft: true
+draft: false ``
 ---
 
 Every GNU/Linux distribution has their own package managers and package formats. for Debian package manager is apt and the .deb package format. Debian packaging is quite interesting, there's a fair bit of instruction that is included in a Debian source package.
