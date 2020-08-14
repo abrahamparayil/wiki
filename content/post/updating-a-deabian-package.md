@@ -12,7 +12,7 @@ This page deals with updating a Debian package to a new upstream release.
 ### When to update a package?
 How frequently a package is updated varies, from package to package. It's usually as per the discretion of the maintainer of the package. Usually there are software packages that are the main products that our users primarily interact with such as Firefox, Gitlab, Emacs etc. and then there are other pieces of software and libraries that is required for above mentioned software packages to function. These packages are called **dependencies**. Dependencies are usually only updated to a newer version when their **dependents** (the main software products we mentioned above) no longer works with the current version.
 
-The rationale for such a system comes from Debian 'score policy of preferring stability over shiny new features. It's more important that every software package currently in Debian works well with every other software package in Debian.
+The rationale for such a system comes from Debian's core policy of preferring stability over shiny new features. It's more important that every software package currently in Debian works well with every other software package in Debian.
 
 ### What do you need to update a Debian package?
 1. A system running Debian. It's possible to package for Debian using Ubuntu or Mint or any Debian based distro but doing it from a Debian system in my experience has given me the least headaches.
