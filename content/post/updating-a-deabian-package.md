@@ -62,7 +62,7 @@ ruby-health-check (3.0.0-1) UNRELEASED; urgency=medium
   `dpkg-buildpackge`
   
   For minor updates, `i.e. a.b.c-d => a.b.e-1` there shouldn't be any problem. The build will complete successfully almost always. If it's not a minor update, things may not \`just work\`. Sometimes you may have issues where you need a newer version of a dependency for this version of our package to work, so we may have to update that package first and come back to this one or there are patches in `debian/patches` made by package maintainers in case a change needs to be made and for some reason the upstream maintainer can't make that change in the upstream, these patched may no longer work when switching from one major version to another. So we need to fix these issues and successfully build the package. When do you know you've successfully build it? Ironically it is when you get a warning saying something along the lines of 'failed to sign your .dsc file'. You don't need to worry about that since the person uploading the package will be the one to sign it.
-- Next we look for policy violations using lintian. When you successfully build a package a file named `ruby-doorkeeper_5.4.0-1_amd64.changes` is generated in the parent directory which if you pass on as an argument to lintian will give you all the warnings and errors. Run 
+- Next we look for policy violations using lintian. When you successfully build a package a file named `package-name_version-number_debian-revision-architecture.changes` is generated in the parent directory which if you pass on as an argument to lintian will give you all the warnings and errors. Run 
   
   `lintian ../ruby-health-check_3.0.0-1_amd64.changes`
   
