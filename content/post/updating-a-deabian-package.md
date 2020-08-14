@@ -38,7 +38,16 @@ I'm going to use `ruby-health-check`, a package I recently worked on as an examp
 
   `gbp clone --pristine-tar git@salsa.debian.org:avron/ruby-health-check.git`
   
-  We use gbp for convenience purposes because it does a lot of things automatically. For example, most Debian source package has three branches: master, upstream and pristine tar. Master branch is usually where we work and build the package, upstream just has untouched upstream files and pristine-tar has instructions to pristine-tar tool to generate exact same tarball from upstream branch and tag. If we clone using git it will only clone the master branch but when we use gbp all three branches will be pulled from salsa. 
+  We use gbp for convenience purposes because it does a lot of things automatically. For example, most Debian source package has three branches: master, upstream and pristine tar. Master branch is usually where we work and build the package, upstream just has untouched upstream files and pristine-tar has instructions to pristine-tar tool to generate exact same tarball from upstream branch and tag. If we clone using git it will only clone the repo and the default branch but when we use gbp all three branches will be pulled from salsa. 
+  Essentially if we use git we would have to:
+  ```
+  git clone git@salsa.debian.org:avron/ruby-health-check.git
+  git checkout upstream
+  git checkout pristine-tar
+  git checkout master
+  
+  ```
+  if we use `gbp clone` we can save some effort.
 - Next `cd` into the directory and download new upstream release tarball using the command:
 
   `uscan --verbose`
@@ -56,9 +65,9 @@ ruby-health-check (3.0.0-1) UNRELEASED; urgency=medium
   ```
    As I mentioned above Debian takes bugs seriously and the team works constantly on improving the quality of the software, so the package maintainers often update the packages with patches, missinng tests etc., so a single version of the package can have multiple revisions that are uploaded to unstable. In order to keep track of this we add a Debian revision number to the end of the upstream version number. So how the version number looks at the end is upstream-version-debian-revision. Up above, you can see the version is 3.0.0-1, which means the upstream version of the package right now is 3.0.0 and 1 signifies that this is the first revision of the said package in Debian.
   
-  Sometimes gbp can mess up the version number. In the sense it will add your entry as a new revision of the previous version. In that case you can open the file in a text editor of your choice and manually change the version number.
+  Sometimes gbp can mess up the version number if there is an UNRELEASED entry already. In the sense it will add your entry as a new revision of the previous version. In that case you can open the file in a text editor of your choice and manually change the version number.
 - Now we build. Run:
-  
+
   `dpkg-buildpackge`
   
   For minor updates, `i.e. a.b.c-d => a.b.e-1` there shouldn't be any problem. The build will complete successfully almost always. If it's not a minor update, things may not \`just work\`. Sometimes you may have issues where you need a newer version of a dependency for this version of our package to work, so we may have to update that package first and come back to this one or there are patches in `debian/patches` made by package maintainers in case a change needs to be made and for some reason the upstream maintainer can't make that change in the upstream, these patched may no longer work when switching from one major version to another. So we need to fix these issues and successfully build the package. When do you know you've successfully build it? Ironically it is when you get a warning saying something along the lines of 'failed to sign your .dsc file'. You don't need to worry about that since the person uploading the package will be the one to sign it.
