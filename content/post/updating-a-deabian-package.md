@@ -46,7 +46,7 @@ I'm going to use `ruby-health-check`, a package I recently worked on as an examp
   Sometimes when using uscan the download link would have deprecated and uscan won't work, at that point your options are either to fix the download link which can be found at `debian/watch` or to manually download the tarball from the upstream releases page. I prefer to fix the link at debian/watch whenever possible and it is fixable in most cases. Here's an [example](https://salsa.debian.org/avron/ruby-doorkeeper/-/commit/14d2d337bcbf3b5fd4d2409be548a541aacda84f) of me fixing the `debian/watch` file for another package. Here are the [instructions](https://wiki.debian.org/Javascript/Nodejs/Npm2Deb#Option_2:_Download_via_github.com_commit_snapshot) to manually download upstream sources when necessary.
 - If you used uscan to download the tarballs you should see a tarball named package-name\_upstream-version.orig.tar.gz in the directory you cloned the repo in. Import the orig.tar.gz using\
   `gbp import-orig --pristine-tar ../ruby-health-check_3.0.0.orig.tar.gz`.  
-- We need to tell the operating system that we have imported a new version into our we repo. We do that by adding an entry in the debian/changelog file. We do so by running the following command: `gbp dch -a`. What this will do is add an entry to debian/changelog file that looks something like this:
+- We need to tell the operating system that we have imported a new version into the repo. We do that by adding an entry in the debian/changelog file. We do so by running the following command: `gbp dch -a`. What this will do is add an entry to debian/changelog file that looks something like this:
 ```
 ruby-health-check (3.0.0-1) UNRELEASED; urgency=medium
 
