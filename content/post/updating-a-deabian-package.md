@@ -38,7 +38,7 @@ I'm going to use `ruby-health-check`, a package I recently worked on as an examp
 
   `gbp clone --pristine-tar git@salsa.debian.org:avron/ruby-health-check.git`
   
-  We use gbp for convenience purposes because it does a lot of things automatically. For example, most Debian source package has three branches: master, upstream and pristine tar. Master branch is usually where we work and build the package, upstream just has untouched upstream files and pristine-tar has upstream tarballs of the packages as downloaded from upstream. If we clone using git it will only clone the master branch but when we use gbp all three branches will be pull from salsa. 
+  We use gbp for convenience purposes because it does a lot of things automatically. For example, most Debian source package has three branches: master, upstream and pristine tar. Master branch is usually where we work and build the package, upstream just has untouched upstream files and pristine-tar has instructions to pristine-tar tool to generate exact same tarball from upstream branch and tag. If we clone using git it will only clone the master branch but when we use gbp all three branches will be pulled from salsa. 
 - Next `cd` into the directory and download new upstream release tarball using the command:
 
   `uscan --verbose`
