@@ -4,7 +4,7 @@ date: 2020-08-14T01:05:10+05:30
 draft: true
 ---
 
-Every GNU/Linux distribution has their own package managers and package formats. for debian package manager is apt and the .deb package format. Debian packaging is quite interesting, there's a fair bit of instruction that is included in a debian source package.
+Every GNU/Linux distribution has their own package managers and package formats. for Debian package manager is apt and the .deb package format. Debian packaging is quite interesting, there's a fair bit of instruction that is included in a Debian source package.
 This page deals with updating a debian package to a new upstream release.
 ## Preface
 ### When to update a package?
