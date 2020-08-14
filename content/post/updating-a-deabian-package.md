@@ -17,33 +17,34 @@ The rationale for such a system comes from Debian's core policy of preferring st
 ### What do you need to update a Debian package?
 1. A system running Debian. It's possible to package for Debian using Ubuntu or Mint or any Debian based distro but doing it from a Debian system in my experience has given me the least headaches.
 2. A virtual Debian Unstable env. Debian has three to fours distributions active at all times: Old-Stable (Currently Stretch), Stable (Currently Buster), Testing (Currently Bullseye) and Unstable (Always Sid).\
-   We do packaging on sid. Every package enters truly only enters Debian once it is in sid, the unstable distribution. It is here that critical bugs are found, reported and fixed. Once a packages reaches a level of maturity in sid, it's moved to the current testing repo. At any point sid has the latest version of any package in Debian. this helps people like me (and hopefully you) who does packaging for Debian. Sid BTW is the only Debian rolling release distribution. You could compare it to Archlinux.\
-   This page long as it is so I'm not going to make it long by adding instructions to setup a Debian Unstable env. Here's a [Debian Wiki Page](https://wiki.debian.org/Packaging/Pre-Requisites) that tells you how to do that. On that page I personally would go with the schroot method because we regularly use stuff like LXC for building in clean envs and testing.
-3. Ability to work from a terminal. You don't need to be unix wizard. Just know your way around a terminal or this is going to be a lot more harder than it is.
+   We do packaging on sid. Every package truly only enters Debian once it is in sid, the unstable distribution. It is here that critical bugs are found, reported and fixed. Once a packages reaches a level of maturity in sid, it's moved to the current testing repo. At any point sid has the latest version of any package in Debian. This helps people like me (and hopefully you) who does packaging for Debian. Sid BTW is the only Debian rolling release distribution. You could compare it to Archlinux.\
+   This page is quite long as it is so I'm not going to make it longer by adding instructions to setup a Debian Unstable env. Here's a [Debian Wiki Page](https://wiki.debian.org/Packaging/Pre-Requisites) that tells you how to do that. Might add a page for this too in the future but not now. On that page I personally would go with schroot because we regularly use stuff like LXC for building in clean envs and testing.
+3. Ability to work from a terminal. You don't need to be unix wizard. Just know your way around a terminal or this is going to be a lot more harder.
 4. Steady internet connection.
 5. If you're not a Debian developer you need a Debian Developer to sponsor (upload your package) your package for you.
 
 ### Getting Started
 1. Get the Unstable env up.
-2. Install required packages:
+2. Install the required packages:
 ```bash
 sudo apt install uscan git git-buildpackage lintian
 ```
-3. Create an account at [Salsa](https://salsa.debian.org)- Debian's Gitlab instance.
+3. Create an account on [Salsa](https://salsa.debian.org)- Debian's Gitlab instance.
 
 ## Basic steps
-I'm going to use `ruby-health-check`, a package I recently worked on as an example.
-- First fork and clone the salsa repo using git-buildpackage i.e gbp:
+I'm going to use `ruby-health-check`, a package I recently worked on as an example. The general steps remain same for almost all packages.
+
+1. First fork and clone the salsa repo using git-buildpackage i.e gbp:
 
   `gbp clone --pristine-tar git@salsa.debian.org:avron/ruby-health-check.git`
   
-  We use gbp for convenience purposes because it does a lot of things automatically. For example, every Debian source package has three branches: master, upstream and pristine tar. Master branch is usually where we work and build the package, upstream just has upstream files and pristine-tar has upstream tarballs of the packages as downloaded from upstream. If we clone using git it will only clone the master branch but when we use gbp all three branches will be pull from salsa. 
+  We use gbp for convenience purposes because it does a lot of things automatically. For example, every Debian source package has three branches: master, upstream and pristine tar. Master branch is usually where we work and build the package, upstream just has untouched upstream files and pristine-tar has upstream tarballs of the packages as downloaded from upstream. If we clone using git it will only clone the master branch but when we use gbp all three branches will be pull from salsa. 
 - Next `cd` into the directory and download new upstream release tarball using the command:
 
   `uscan --verbose`
 
-  Sometimes the download link would have deprecated and uscan won't work, at that point your options are either to fix the download link which can be found at `debian/watch` or to manually download the tarball from the upstream releases page. I prefer to fix the link at debian/watch whenever possible and it is fixable in most cases, here's an [example](https://salsa.debian.org/avron/ruby-doorkeeper/-/commit/14d2d337bcbf3b5fd4d2409be548a541aacda84f) of me doing it for another package. Here are the [instructions](https://wiki.debian.org/Javascript/Nodejs/Npm2Deb#Option_2:_Download_via_github.com_commit_snapshot) to manually download upstream sources when necessary.
-- If you used uscan to download the tarballs you should see a tarball named <package-name>_<upstream_version>.orig.tar.gz in the directory you cloned the repo in. Import the orig.tar.gz using\
+  Sometimes when using uscan the download link would have deprecated and uscan won't work, at that point your options are either to fix the download link which can be found at `debian/watch` or to manually download the tarball from the upstream releases page. I prefer to fix the link at debian/watch whenever possible and it is fixable in most cases. Here's an [example](https://salsa.debian.org/avron/ruby-doorkeeper/-/commit/14d2d337bcbf3b5fd4d2409be548a541aacda84f) of me fixing the `debian/watch` file for another package. Here are the [instructions](https://wiki.debian.org/Javascript/Nodejs/Npm2Deb#Option_2:_Download_via_github.com_commit_snapshot) to manually download upstream sources when necessary.
+- If you used uscan to download the tarballs you should see a tarball named package-name\_upstream-version.orig.tar.gz in the directory you cloned the repo in. Import the orig.tar.gz using\
   `gbp import-orig --pristine-tar ../ruby-health-check_3.0.0.orig.tar.gz`.  
 - We need to tell the operating system that we have imported a new version into our we repo. We do that by adding an entry in the debian/changelog file. We do so by running the following command: `gbp dch -a`. What this will do is add an entry to debian/changelog file that looks something like this:
 ```
