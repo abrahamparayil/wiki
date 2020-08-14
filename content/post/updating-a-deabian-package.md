@@ -1,6 +1,8 @@
 ---
 title: "Updating a Deabian Package"
 date: 2020-08-14T01:05:10+05:30
+url: updating-deb-pkgs 
+tags: ["debian", "gnu/linux","packaging"]
 draft: true
 ---
 
