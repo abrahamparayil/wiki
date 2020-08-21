@@ -1,5 +1,5 @@
 ---
-title: "Updating a Deabian Package"
+title: "Updating a Debian Package"
 date: 2020-08-14T01:05:10+05:30
 url: updating-deb-pkgs 
 tags: ["debian", "gnu/linux","packaging"]
