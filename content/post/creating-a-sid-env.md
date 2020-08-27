@@ -79,3 +79,10 @@ Once that is done add your user to the sudo group with this command:
 usermod -aG sudo <your username>
 ```
 Now you can exit from the root shell and re-enter schroot as a normal user and run sudo.
+
+## How to make sre you've set up everything correctly?
+ Run the command `cat /etc/debian_version` and it should give you an output as shown below.
+ ```bash
+ ❯ cat /etc/debian_version
+bullseye/sid
+```
