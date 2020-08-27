@@ -2,6 +2,7 @@
 title: "Setting up development Environment for Debian Packaging"
 date: 2020-08-27T12:44:21+05:30
 tags: ["debian", "gnu/linux","packaging"]
+url: sid-env
 draft: false 
 ---
 
