@@ -5,7 +5,7 @@ tags: ["debian", "gnu/linux","packaging"]
 draft: true
 ---
 
-This page is created to aid the attendants of the [ഡെബിയന്‍ പാക്കേജിങ്ങ് ബാലപാഠങ്ങള്‍ പഠിയ്ക്കാം (Simple Packaging Tutorial with debmake)](https://debconf20.debconf.org/talks/88-simple-packaging-tutorial-with-debmake/) workshop held at the Malayalam MiniConf during DebConf 20 on 28th August 12 AM - 1:45 PM IST.
+This page is created to aid the attendants of the [ഡെബിയന്‍ പാക്കേജിങ്ങ് ബാലപാഠങ്ങള്‍ പഠിയ്ക്കാം (Simple Packaging Tutorial with debmake)](https://debconf20.debconf.org/talks/88-simple-packaging-tutorial-with-debmake/) workshop held at the Malayalam MiniConf during DebConf 20 on 28th August 08:30 PM - 10:15 PM IST.
 
 The workshop was taken by [Pirate Praveen](https://poddery.com/people/45fa8bea21b8a0f5) who is a Debian Developer and myself.
 
@@ -26,4 +26,4 @@ cd <directory name>
 ```
 Packaging is mostly a staright foreward ordeal. The process of packaging remains more or less the same regardless of whether it's a JS or python or language x package. For the purpose of this tutorial we will be packaging a node module called pretty-ms.
 
-To begin we need to first collect the source code of the peice of software that we intend to package which in our case is `pretty-ms`.
+To begin we need to first collect the source code of the peice of software that we intend to package which in our case is `pretty-ms`. So let's go to npmjs page for [pretty-ms](https://www.npmjs.com/package/pretty-ms)  
