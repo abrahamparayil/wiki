@@ -72,9 +72,10 @@ Maybe you don't want to exit out of your normal user and re-enter schroot as the
 
 First, enter the schroot as root with the command given above and install sudo with
 ```bash
-sudo apt install sudo
+apt install sudo
 ```
 Once that is done add your user to the sudo group with this command:
 ```bash
 usermod -aG sudo <your username>
 ```
+Now you can exit from the root shell and re-enter schroot as a normal user and run sudo.
