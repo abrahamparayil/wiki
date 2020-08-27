@@ -48,6 +48,7 @@ I use emacs for most of my text editing needs and more. Sometime ago I started w
 ## Instant Messaging
 - [Matrix](https://matrix.org) : [@abraham\_raji](https://matrix.to/#/@abraham_raji:matrix.org)
 - [Telegram Messenger](https://telegram.org) : [@avronr](https://t.me/avronr)
+- [https://xmpp.org](XMPP) : []()
 ## Terminal Emulator 
 - [St](https://st.suckless.org/)
 - Gnome Terminal
