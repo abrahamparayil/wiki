@@ -19,6 +19,9 @@ The rationale for such a system comes from Debian's core policy of preferring st
 2. A virtual Debian Unstable env. Debian has three to fours distributions active at all times: Old-Stable (Currently Stretch), Stable (Currently Buster), Testing (Currently Bullseye) and Unstable (Always Sid).\
    We do packaging on sid. Every package truly only enters Debian once it is in sid, the unstable distribution. It is here that critical bugs are found, reported and fixed. Once a packages reaches a level of maturity in sid, it's moved to the current testing repo. At any point sid has the latest version of any package in Debian. This helps people like me (and hopefully you) who does packaging for Debian. Sid BTW is the only Debian rolling release distribution. You could compare it to Archlinux.\
    This page is quite long as it is so I'm not going to make it longer by adding instructions to setup a Debian Unstable env. Here's a [Debian Wiki Page](https://wiki.debian.org/Packaging/Pre-Requisites) that tells you how to do that. Might add a page for this too in the future but not now. On that page I personally would go with schroot because we regularly use stuff like LXC for building in clean envs and testing.
+
+*Update*: I've made a wiki page on how to setup a Debian Sid env [here](https://wiki.abrahamraji.in/sid-env/).
+
 3. Ability to work from a terminal. You don't need to be unix wizard. Just know your way around a terminal or this is going to be a lot more harder.
 4. Steady internet connection.
 5. If you're not a Debian developer you need a Debian Developer to sponsor (upload your package) your package for you.
