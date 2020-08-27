@@ -65,7 +65,7 @@ To run schroot as normal user, type in:
 ```bash
 schroot -c debian-sid
 ```
-You will notice that you're home folder in your base system is still your home folder and all the files are accessible to you and your configs such as your .bashrc will work here too.
+You will notice that your home folder in your base system is still your home folder and all the files are accessible to you and your configs such as your .bashrc will work here too.
 
 ## Setting up sudo
 Maybe you don't want to exit out of your normal user and re-enter schroot as the root user everytime you want to install a dependency for a package and want sudo. You can set it up the exact whay you would in regular distro.
