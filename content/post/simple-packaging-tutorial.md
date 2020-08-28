@@ -238,7 +238,6 @@ Description: auto-generated package by debmake
 ```
 There are a few things we can fix here, namely:
 - Section: this is a JS package so set it to javascript.
-- Build-Depends: it's using an old version set it to the latest version which is 13
 - Standards-Version: which is also using an old version, so set it the new one which is 4.5.0
 - We could also add the homepage link
 - The Archtecture of course
@@ -250,7 +249,7 @@ Once you've made these changes the file should look something like this:
  Section: javascript
  Priority: optional
  Maintainer: Abraham Raji <avronr@tuta.io>
- Build-Depends: debhelper (= 13)
+ Build-Depends: debhelper (>=11~)
  Standards-Version: 4.5.0
  Homepage:https://github.com/sindresorhus/pretty-ms#readme
  
@@ -341,3 +340,32 @@ Make sensible changes and make a single line should not have more than 80 charac
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS  IN
   THE SOFTWARE.
 ```
+### Satifying Lintian
+Now run the `dpkg-buildpackage` again so that the changes we made takes effect. As of now we have resolved all the basic issues. Lintian will help us find the ones that we missed, lintian by default will give short messages but detailed descriptions will help us solve these issues. in order to do that let's set an alias in our shell's rc file (~/.bashr or ~/.zshrc). So pul the following lines in your .bashrc or .zshrc
+```bash
+alias lintian='lintian -iIEcv --pedantic --color auto'
+```
+Now run `lintian` and it will throw a bunch of complaints on your face. We need to pay attention to the lines that start with E: or W:. Let's fix an E which complains that ` changelog-is-dh_make-template` and if you read through the description you'll see that the issue is in the debian/changelog. Let's take a look at the file:
+```
+node-pretty-ms (7.0.0-1) UNRELEASED; urgency=low
+
+  * Initial release. Closes: #nnnn
+    <nnnn is the bug number of your ITP>
+
+ -- Abraham Raji <avronr@tuta.io>  Fri, 28 Aug 2020 16:05:03 +0530
+```
+The issue is that when we wish to package a new package we need to send an Intend to Package mail which is registered as an ITP Bug. This helps co-ordinate packaging work and prevent duplicate work. The bug has a unique identification number. Which we put in the changelog after the hashtap in `* Initial release. Closes: #nnnn`. So we need to check for existing bugs before we make a new ITP bug, we could search for existing bugs at wnpp.debian.net. Now we can solve this error by removing the line `<nnnn is the bug number of your ITP>` and add the ITP bug number. For the sake of this workshop we're going to add a randim number there. Once we do that the file should look something like this:
+```
+node-pretty-ms (7.0.0-1) UNRELEASED; urgency=low
+ 
+   * Initial release. Closes: #982937
+ 
+  -- Abraham Raji <avronr@tuta.io>  Fri, 28 Aug 2020 16:05:03 +0530
+```
+Now we still have a lot more complaints to solve but to keep the size of this page somewhat resonable, I'm not going to include fixes to all the complaints here. Here’s an [example](https://salsa.debian.org/avron/node-cjson/-/commits/master) from a package I updated a while ago. It is sort of a jackpot in the sense it has a bunch of fixes to common lintian complaints I’ve come across. Commit messages could be a little better and more creative though.
+
+Now we did a lot of things manually. We actually have a tool that does most of what we already did called npm2deb.
+
+Here's a [wiki page](https://wiki.debian.org/Javascript/Nodejs/Npm2Deb) giving a tutorial on how to use npm2deb.
+
+Here's a [wiki page](https://wiki.abrahamraji.in/updating-deb-pkgs/) I wrote regarding updating packages.
