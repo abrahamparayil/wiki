@@ -109,7 +109,7 @@ If you're file structure looks like this then you're good. If not retrace your s
     * test.js
     * .travis.yml
 {{< /fileTree >}}
-## Creating a source package
+## Step 3: Creating a source package
 Next let's create a source package using `dpkg-source -b .`. If you guys don't have dpkg-source in your system you can get it by running `sudo apt install build-essentials`. The output of which should look like this:
 {{< code numbered="true" >}}
 ❯ dpkg-source -b .
@@ -124,3 +124,88 @@ dpkg-source: info: [[[building node-pretty-ms in node-pretty-ms_7.0.0-1.dsc]]]
 4. Lastly we have the `node-pretty-ms_7.0.0-1.dsc` file. This file is a secuirity measure if you look into that file you file find infirmation regarding the package extracted from the files in our debian directory and the check-sums of the `node-pretty-ms_7.0.0.orig.tar.gz` and `node-pretty-ms_7.0.0-1.debian.tar.xz`. This is so that others can check the integrity of these files once they have downloaded it from the archives after a Debian Developer uploads it there.
 
 These three files together form the *Debian Source Package*.
+### The .dsc file
+Let's look at the contents of the .dsc file real quick.
+```
+Format: 3.0 (quilt)
+Source: node-pretty-ms
+Binary: node-pretty-ms
+Architecture: any
+Version: 7.0.0-1
+Maintainer: Abraham Raji <avronr@tuta.io>
+Homepage: <insert the upstream URL, if relevant>
+Standards-Version: 4.1.4
+Build-Depends: debhelper (>= 11~)
+Package-List:
+ node-pretty-ms deb unknown optional arch=any
+Checksums-Sha1:
+ 28bb69ab4720c07dcdd73520b1305137ae354f90 6142 node-pretty-ms_7.0.0.orig.tar.gz
+ 329139a95e273617ecfdb41466325cede4fa983d 2004 node-pretty-ms_7.0.0-1.debian.tar.xz
+Checksums-Sha256:
+ 256871d7b49dc76e33d841e46c5d36008858aceea9081d9e62c7f5760e65ea33 6142 node-pretty-ms_7.0.0.orig.tar.gz
+ 3e28122e5bbcb1c771c7431b9af90bc74da45c0461be3a6bc8bcadd73e930707 2004 node-pretty-ms_7.0.0-1.debian.tar.xz
+Files:
+ ab6e9b3155d0cd73b54d4f0ba8dd0774 6142 node-pretty-ms_7.0.0.orig.tar.gz
+ 1d7cf58aef1718817cece400cb978ad9 2004 node-pretty-ms_7.0.0-1.debian.tar.xz
+```
+We can see various information suh as the format used which as we saw before is quilt 3.0. The next two feilds are interesting, we mentioned at the begining of this workshop about names of user facing software vs libraries that comes into play here, the name of the source package vs the name of the binary which the users will use to install this package and such. Next we have Architecture which states what all architectures you can install this package on, here since it's a JS package it can be installed on all architectures and that field should actually say all, but debamke hasn't learnt to detect that yet so it put any there, we'll fix that later. Then we have the version followed by the information about the person working on the package (which debmake got from my .zshrc which is where I've put it and if you use bash you can put it in your .bashrc and Debmake will pick that up). Next we have the Homepage feild where we can put the link to the homepage of the package. Next is Standards-Version which tells us which Debian policy the package follows and set to the version number of the package `debian-policy`, this is also a bit outdated and we will fix it a little later. The next field is Build-Depends which specifies the packages needed to build executable files from the source. Next we have the checksums we mentioned above in three formats, Sha1, Sha256 and MD5. So that's the DSC file.
+
+## Step 4: Building and Satifying Lintian
+Now that we have the source package we can build it. We need to be in the `node-pretty-ms-7.0.0` folder to build it. Inside the folder we will execute the `dpkg-buildpackage` command which will build the package for us. The log of that command will look something like this:
+```
+❯ dpkg-buildpackage
+dpkg-buildpackage: info: source package node-pretty-ms
+dpkg-buildpackage: info: source version 7.0.0-1
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by Abraham Raji <avronr@tuta.io>
+dpkg-buildpackage: info: host architecture amd64
+ dpkg-source --before-build .
+ fakeroot debian/rules clean
+dh clean
+   dh_clean
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building node-pretty-ms using existing ./node-pretty-ms_7.0.0.orig.tar.gz
+dpkg-source: info: building node-pretty-ms in node-pretty-ms_7.0.0-1.debian.tar.xz
+dpkg-source: info: building node-pretty-ms in node-pretty-ms_7.0.0-1.dsc
+ debian/rules build
+dh build
+   dh_update_autotools_config
+   dh_autoreconf
+   create-stamp debian/debhelper-build-stamp
+ fakeroot debian/rules binary
+dh binary
+   dh_testroot
+   dh_prep
+   dh_installdocs
+   dh_installchangelogs
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+   dh_installdeb
+   dh_gencontrol
+dpkg-gencontrol: warning: Depends field of package node-pretty-ms: substitution variable ${shlibs:Depends} used, but is not defined
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'node-pretty-ms' in '../node-pretty-ms_7.0.0-1_amd64.deb'.
+ dpkg-genbuildinfo
+ dpkg-genchanges  >../node-pretty-ms_7.0.0-1_amd64.changes
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: info: full upload (original source is included)
+dpkg-buildpackage: warning: not signing UNRELEASED build; use --force-sign to override
+```
+Also, if we look at the parent directory we have a few new files:
+```
+❯ ls ..
+node-pretty-ms-7.0.0                    node-pretty-ms_7.0.0-1.debian.tar.xz
+node-pretty-ms_7.0.0-1_amd64.buildinfo  node-pretty-ms_7.0.0-1.dsc
+node-pretty-ms_7.0.0-1_amd64.changes    node-pretty-ms_7.0.0.orig.tar.gz
+node-pretty-ms_7.0.0-1_amd64.deb
+```
