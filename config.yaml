@@ -18,7 +18,7 @@ imaging:
 params:
   description: "**Abraham's braindump** . Main blog: [abrahamraji.in](https://abrahamraji.in)"
   homeMetaContent: Abraham's braindump
-  footer: Made with [Hugo](https://gohugo.io/).
+  footer: Made with ❤️. All original content is licensed under a free/libre copyleft license (GPL or CC BY-SA).
   # For more date formats see https://gohugo.io/functions/format/
   dateFormat: Jan 2, 2006
   codePenUser: someUser
