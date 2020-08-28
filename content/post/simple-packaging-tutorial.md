@@ -2,7 +2,7 @@
 title: "Simple Packaging Tutorial: The Long Version"
 date: 2020-08-26T17:19:10+05:30
 tags: ["debian", "gnu/linux","packaging"]
-draft: true
+draft: false
 ---
 
 This page is created to aid the attendants of the [ഡെബിയന്‍ പാക്കേജിങ്ങ് ബാലപാഠങ്ങള്‍ പഠിയ്ക്കാം (Simple Packaging Tutorial with debmake)](https://debconf20.debconf.org/talks/88-simple-packaging-tutorial-with-debmake/) workshop held at the Malayalam MiniConf during DebConf 20 on 28th August 08:30 PM - 10:15 PM IST.
