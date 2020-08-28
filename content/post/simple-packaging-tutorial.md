@@ -81,3 +81,46 @@ drwxr-xr-x 2 avronr avronr  4096 Apr 27 11:42 .github
 -rw-r--r-- 1 avronr avronr 12608 Apr 27 11:42 test.js
 -rw-r--r-- 1 avronr avronr    45 Apr 27 11:42 .travis.yml
 ```
+If you're file structure looks like this then you're good. If not retrace your steps and find what went wrong. Next we begin the actual Debianization which is done using a tool called Debmake make the `debain/` directory. so let's install `debamke` usinf `sudo apt install debmake` and run debmake and see how the files structure looks after that.
+{{< fileTree >}}
+* node-pretty-ms-7.0.0
+    * debian
+      * changelog
+      * compat
+      * control
+      * copyright
+      * patches
+      * README.Debian
+      * rules
+      * source
+      * watch
+    * .editorconfig
+    * .gitattributes
+    * .github
+      * funding.yml
+    * .gitignore
+    * index.d.ts
+    * index.js
+    * index.test-d.ts
+    * license
+    * .npmrc
+    * package.json
+    * readme.md
+    * test.js
+    * .travis.yml
+{{< /fileTree >}}
+## Creating a source package
+Next let's create a source package using `dpkg-source -b .`. If you guys don't have dpkg-source in your system you can get it by running `sudo apt install build-essentials`. The output of which should look like this:
+{{< code numbered="true" >}}
+❯ dpkg-source -b .
+dpkg-source: info: [[[using source format '3.0 (quilt)']]]
+dpkg-source: info: [[[building node-pretty-ms using existing ./node-pretty-ms_7.0.0.orig.tar.gz]]]
+dpkg-source: info: [[[building node-pretty-ms in node-pretty-ms_7.0.0-1.debian.tar.xz]]]
+dpkg-source: info: [[[building node-pretty-ms in node-pretty-ms_7.0.0-1.dsc]]]
+{{< /code >}}
+1. If you look through this log you will see dpkg-source mentioning that it is using the quilt 3.0 source format.
+2. You will also notice that is using the .orig.tar.gz file that we created earlier
+3. It has build a tar of the debian directory too. But there is also something new here, the file is named `node-pretty-ms_7.0.0-1.debian.tar.xz` where you can see that there is a `-1` after the version number. That number is called the debian revision number. Say we packaged a piece of software and uploaded it to the Debian archves and then someone reported a bug and we made and fix and want to release the package again in the archives with the fix. Now you see we have different 'revisions' of the same package with the same version number. So inorder to help keep a track of this we have debian revision number which is just a count of the number of times that particular version package was released into the Debian archives. So if we have made a bug fix in node-pretty-ms and release it again to the archives it will be releases as `node-pretty-ms_7.0.0-2`.
+4. Lastly we have the `node-pretty-ms_7.0.0-1.dsc` file. This file is a secuirity measure if you look into that file you file find infirmation regarding the package extracted from the files in our debian directory and the check-sums of the `node-pretty-ms_7.0.0.orig.tar.gz` and `node-pretty-ms_7.0.0-1.debian.tar.xz`. This is so that others can check the integrity of these files once they have downloaded it from the archives after a Debian Developer uploads it there.
+
+These three files together form the *Debian Source Package*.
