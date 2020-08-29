@@ -2,6 +2,7 @@
 title: "About"
 date: 2020-08-29T02:02:04+05:30
 draft: true
+url: about
 ---
 My name is Abraham Raji. I'm a maker. I design and build solutions to problems that fascinate me. I consider myself a minimalist who believes in sensible and intuitive design that is beautiful both on the outside as well as under the hood.
 
