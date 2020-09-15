@@ -33,7 +33,14 @@ The rationale for such a system comes from Debian's core policy of preferring st
 sudo apt install uscan git git-buildpackage lintian
 ```
 3. Create an account on [Salsa](https://salsa.debian.org)- Debian's Gitlab instance.
-
+4. Add the following to you .bashrc or .zshrc:
+```bash
+export DEBEMAIL=your@email.domain
+export DEBFULLNAME='Your Name'
+alias lintian='lintian -iIEcv --pedantic --color auto'
+alias git-import-dsc='git-import-dsc --author-is-committer --pristine-tar'
+alias clean='fakeroot debian/rules clean'
+```
 ## Basic steps
 I'm going to use `ruby-health-check`, a package I recently worked on as an example. The general steps remain same for almost all packages.
 
