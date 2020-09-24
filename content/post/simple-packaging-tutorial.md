@@ -110,7 +110,7 @@ If you're file structure looks like this then you're good. If not retrace your s
     * .travis.yml
 {{< /fileTree >}}
 ## Step 3: Creating a source package
-Next let's create a source package using `dpkg-source -b .`. If you guys don't have dpkg-source in your system you can get it by running `sudo apt install build-essentials`. The output of which should look like this:
+Next let's create a source package using `dpkg-source -b .`. If you guys don't have dpkg-source in your system you can get it by running `sudo apt install build-essential`. The output of which should look like this:
 {{< code numbered="true" >}}
 ❯ dpkg-source -b .
 dpkg-source: info: [[[using source format '3.0 (quilt)']]]
