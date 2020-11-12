@@ -22,6 +22,12 @@ $ sudo apt install zsh
 ```bash
 $ sudo dnf install zsh
 ```
+#### Setting Zsh to your default shell
+Now that you have installed zsh on your machine let's set it as the default shell for your user. Execute the following command without sudo, upon which you'll be prompted to enter the password for your user.
+```bash
+chsh -s $(which zsh)
+```
+Now if you log out and log back and open a terminal it should present you with the zsh shell instead of the bash shell.
 
 ### Installing Oh My Zsh
 - Using Curl
