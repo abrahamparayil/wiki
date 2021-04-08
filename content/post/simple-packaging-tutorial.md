@@ -8,11 +8,12 @@ draft: false
 This page is intended to aid the attendees of the [ഡെബിയന്‍ പാക്കേജിങ്ങ് ബാലപാഠങ്ങള്‍ പഠിയ്ക്കാം (Simple Packaging Tutorial with debmake)](https://debconf20.debconf.org/talks/88-simple-packaging-tutorial-with-debmake/) workshop held at the Malayalam MiniConf during DebConf 20 on 28th August 08:30 PM - 10:15 PM IST.
 
 The workshop was taken by [Pirate Praveen](https://poddery.com/people/45fa8bea21b8a0f5) who is a Debian Developer and myself.
+This page adheres to the structure of the workshop and provides additional information that is otherwise spread across multiple pages in the Debian Wiki.
 
-In the workshop, we will be showing you folks how to make a simple Debian package. You could refer [Simple Packaging Tutorial](https://wiki.debian.org/SimplePackagingTutorial) at the Debian Wiki. This page adheres to the structure of the workshop and provides additional information that is otherwise spread across multiple pages in the Debian Wiki.
+You could refer [Simple Packaging Tutorial](https://wiki.debian.org/SimplePackagingTutorial) (a shorter version of this) at the Debian Wiki.
 
 {{< note >}}
-Having a Debian Unstable System is a pre-requisite to this workshop. If you haven't set it up yet, you can follow the tutorial => https://wiki.abrahamraji.in/sid-env/ to set up an unstable system on your machine using schroot.
+Having a Debian Unstable System is a pre-requisite to this workshop. If you haven't set one up yet, you can follow the tutorial => https://wiki.abrahamraji.in/sid-env/ to set up an unstable system on your machine using schroot.
 {{< /note >}}
 
 **Every command we execute in this tutorial will be done in the Unstable System.**
@@ -22,9 +23,9 @@ First, let's get organized, let's create a folder in our home directory dedicate
 ```bash
 mkdir <directory name>
 ```
-Where <directory name> is pretty much anything you wish to name it. Personally I've named mine Debian.
+Where <directory name> is pretty much anything you wish to name the folder where you'll put all the files related to packaging. Personally I've named mine Debian.
 
-Keeping things organized will help you when working with complex packages in the future. It will avoid confusion and help you stay on top of things without things getting overwhelming.
+Keeping things organized will help you when working with complex packages in the future. It will avoid confusion and help you stay on top of things without getting overwhelming.
 
 Now once we've created the said directory let's switch to it using the `cd command`
 ```bash
@@ -33,7 +34,7 @@ cd <directory name>
 Packaging is often a straight forward ordeal. The process of packaging remains more or less the same regardless of whether it's a JS or python or language x package. For the purpose of this tutorial we will be packaging a node module called pretty-ms.
 
 ## Step 1: Acquire the source code.
-To begin we need to first collect the source code of the piece of software that we intend to package which in our case is `pretty-ms`. So let's go to npmjs for [pretty-ms](https://www.npmjs.com/package/pretty-ms). There on the right side of the page we can find the link to the repository and this is where we can find the source code. The source to `pretty-ms` is hosted [here](https://github.com/sindresorhus/pretty-ms). What this package pretty, much does is convert time produced in milliseconds to more human understandable formats such as hours, minutes and seconds.
+To begin we need to first collect the source code of the piece of software that we intend to package, which in our case is `pretty-ms`. So let's go to npmjs for [pretty-ms](https://www.npmjs.com/package/pretty-ms). There on the right side of the page we can find the link to the repository and this is where we can find the source code. The source to `pretty-ms` is hosted [here](https://github.com/sindresorhus/pretty-ms). What this package pretty, much does is convert time produced in milliseconds to more human understandable formats such as hours, minutes and seconds.
 
 If we go through the files we can find the `package.json` file which contains the metadata of the node module and README.md which contains documentation for the node nodule. The main files i.e. the actual module is the index.js file and we also have the test.js file which contains tests for the module to ensure that it works properly. Then we have the LICENSE file which contains the copyright information which will be useful later on.
 
@@ -364,7 +365,7 @@ node-pretty-ms (7.0.0-1) UNRELEASED; urgency=low
 ```
 Now we still have a lot more complaints to solve but to keep the size of this page somewhat reasonable, I'm not going to include fixes to all the complaints here. Here’s an [example](https://salsa.debian.org/avron/node-cjson/-/commits/master) from a package I updated a while ago. It is sort of a jackpot in the sense it has a bunch of fixes to common lintian complaints I’ve come across. Commit messages could be a little better and more creative though.
 
-Now we did a lot of things manually. We actually have a tool that does most of what we already did called npm2deb.
+Here we did a lot of things manually like visit different sites and collect tarballs and stuff but actually we didn't have to do that. We actually have a tool that does most of what we already did called npm2deb. We went throug all taht in this tutorial because it is important you know what's happening under the hood.
 
 Here's a [wiki page](https://wiki.debian.org/Javascript/Nodejs/Npm2Deb) giving a tutorial on how to use npm2deb.
 
