@@ -41,7 +41,7 @@ I use emacs for most of my text editing needs and more. Sometime ago I started w
   - Free Software ♥
   - You can get a lot done from just Emacs- text editing, git. ssh, Document editor and more!
 ## Instant Messaging
-- [Matrix](https://matrix.org) : [@abraham\_raji](https://matrix.to/#/@abraham_raji:matrix.org)
+- [Matrix](https://matrix.org) : [@abraham\_raji:matrix.org](https://matrix.to/#/@abraham_raji:matrix.org)
 - [Telegram Messenger](https://telegram.org) : [@avronr](https://t.me/avronr)
 - [https://xmpp.org](XMPP) : []()
 ## Terminal Emulator 
