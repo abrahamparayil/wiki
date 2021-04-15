@@ -24,15 +24,11 @@ This is a list of software that I use. The main purpose for the existence of thi
     - Why?\
         Because I develop websites and I need to make sure the websites I make properly render across various browsers.
 ## Operating System
-- [Debian 10 [Buster]](https://www.debian.org/)
-  - Version: 10.5.0
+- [Debian Teasting](https://www.debian.org/)
 ```sh
 ❯ cat /etc/os-release
-PRETTY_NAME="Debian GNU/Linux 10 (buster)"
+PRETTY_NAME="Debian GNU/Linux bullseye/sid"
 NAME="Debian GNU/Linux"
-VERSION_ID="10"
-VERSION="10 (buster)"
-VERSION_CODENAME=buster
 ID=debian
 HOME_URL="https://www.debian.org/"
 SUPPORT_URL="https://www.debian.org/support"
