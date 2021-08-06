@@ -1,9 +1,4 @@
----
-title: "Using GnuPG"
-date: 2020-11-26T11:24:23+05:30
-tags: ["privacy", "gnupg"]
-url: gpg
----
+# Using GnuPG
 
 > GNU Privacy Guard (GnuPG or GPG) is a free (as in freedom) software 
 > replacement for Symantec's PGP cryptographic software suite, and is compliant

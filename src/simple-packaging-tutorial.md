@@ -1,9 +1,4 @@
----
-title: "Simple Packaging Tutorial: The Long Version"
-date: 2020-08-26T17:19:10+05:30
-tags: ["debian", "gnu/linux","packaging"]
-draft: false
----
+# Simple Packaging Tutorial: The Long Version
 
 This page is intended to aid the attendees of the [ഡെബിയന്‍ പാക്കേജിങ്ങ് ബാലപാഠങ്ങള്‍ പഠിയ്ക്കാം (Simple Packaging Tutorial with debmake)](https://debconf20.debconf.org/talks/88-simple-packaging-tutorial-with-debmake/) workshop held at the Malayalam MiniConf during DebConf 20 on 28th August 08:30 PM - 10:15 PM IST.
 
@@ -12,9 +7,7 @@ This page adheres to the structure of the workshop and provides additional infor
 
 You could refer [Simple Packaging Tutorial](https://wiki.debian.org/SimplePackagingTutorial) (a shorter version of this) at the Debian Wiki.
 
-{{< note >}}
-Having a Debian Unstable System is a pre-requisite to this workshop. If you haven't set one up yet, you can follow the tutorial => https://wiki.abrahamraji.in/sid-env/ to set up an unstable system on your machine using schroot.
-{{< /note >}}
+**Having a Debian Unstable System is a pre-requisite to this workshop. If you haven't set one up yet, you can follow the tutorial => https://wiki.abrahamraji.in/sid-env/ to set up an unstable system on your machine using schroot.**
 
 **Every command we execute in this tutorial will be done in the Unstable System.**
 
@@ -83,33 +76,33 @@ drwxr-xr-x 2 avronr avronr  4096 Apr 27 11:42 .github
 -rw-r--r-- 1 avronr avronr    45 Apr 27 11:42 .travis.yml
 ```
 If you're file structure looks like this then you're good. If not retrace your steps and find what went wrong. Next we begin the actual Debianization which is done using a tool called Debmake make the `debian/` directory. so let's install `debmake` using `sudo apt install debmake` and run debmake and see how the files structure looks after that.
-{{< fileTree >}}
-* node-pretty-ms-7.0.0
-    * debian
-      * changelog
-      * compat
-      * control
-      * copyright
-      * patches
-      * README.Debian
-      * rules
-      * source
-      * watch
-    * .editorconfig
-    * .gitattributes
-    * .github
-      * funding.yml
-    * .gitignore
-    * index.d.ts
-    * index.js
-    * index.test-d.ts
-    * license
-    * .npmrc
-    * package.json
-    * readme.md
-    * test.js
-    * .travis.yml
-{{< /fileTree >}}
+ ```
+ node-pretty-ms-7.0.0
+  ├── debian
+  │   ├──  changelog
+  │   ├──  compat
+  │   ├──  control
+  │   ├──  copyright
+  │   ├──  patches
+  │   ├──  README.Debian
+  │   ├──  rules
+  │   ├──  source
+  │   └──  watch
+  ├──  .editorconfig
+  ├──  .gitattributes
+  ├──  .github
+  |     └── funding.yml
+  ├──  .gitignore
+  ├──  index.d.ts
+  ├──  index.js
+  ├──  index.test-d.ts
+  ├──  license
+  ├──  .npmrc
+  ├──  package.json
+  ├──  readme.md
+  ├──  test.js
+  └── .travis.yml
+```
 ## Step 3: Creating a source package
 Next let's create a source package using `dpkg-source -b .`. If you guys don't have dpkg-source in your system you can get it by running `sudo apt install build-essential`. The output of which should look like this:
 {{< code numbered="true" >}}

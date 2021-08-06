@@ -1,10 +1,4 @@
----
-title: "Setting up Sid Development Environment for Debian Packaging"
-date: 2020-08-27T12:44:21+05:30
-tags: ["debian", "gnu/linux","packaging"]
-url: sid-env
-draft: false 
----
+# Setting up Sid Development Environment for Debian Packaging
 
 ## Why a sid env?
 Debian packages are developed for Debian through the Unstable distribution or Unstable Branch. Debian almost always has three distributions going for it at any point of time. There is a stable branch which is currently Buster which is what users put on their production machines and is recommended by Debian for it's users as it's officially supported by the community and recieves regular updates that resolves bugs and provides security patches. Concurrently Debian also maintains two other Distributions: testing which currently is Bullseye and unstable which always will be Sid. The way this works is when a new release is made the Debian Developers discuss and decide what features they wish to implement in the next release. They work on these features in Sid which is used to package new packages that are uploaded to the Sid archives and once they've proven their usability they're moved to the testing archives where they're further tested and worked upon. When all the features that was decided has been implemented and the distribution contains no release critical bugs, a new version of Debian is released that is the Testing becomes the new stable and the current stable becomes old-stable. The next stable version will be current testing which is Bullseye and Buster at that point will become old-stable.

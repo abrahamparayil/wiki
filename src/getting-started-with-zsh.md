@@ -1,14 +1,7 @@
----
-title: "Zsh with Oh My Zsh"
-date: 2020-08-08T04:06:11+05:30
-draft: flase
-url: zsh
-tags: ["zsh", "gnu/linux","cli"]
----
+# Zsh with Oh My Zsh
 
-{{< note >}}
-I don't use zsh with ohmyzsh anymore. [This](https://gitlab.com/avron/zsh) is what I use now. More lean and custom.
-{{< /note >}}
+## I don't use zsh with ohmyzsh anymore. [This](https://gitlab.com/avron/zsh) is what I use now. More lean and custom.
+
 **Z shell** or **Zsh** is a unix shell that was written by Paul Falstad in 1990. The name zsh derives from the name of Yale professor Zhong Shao (then a teaching assistant at Princeton University) — Paul Falstad regarded Shao's login-id, "zsh", as a good name for a shell.
 Zsh has features like interactive Tab completion, automated file searching, regex integration, advanced shorthand for defining command scope, and a rich theme engine. Combine it with a framework like oh-my-zsh, it really could help you be more productive.
 

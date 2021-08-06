@@ -1,10 +1,4 @@
----
-title: "Updating a Debian Package"
-date: 2020-08-14T01:05:10+05:30
-url: updating-deb-pkgs 
-tags: ["debian", "gnu/linux","packaging"]
-draft: false
----
+# Updating a Debian Package
 
 Every GNU/Linux distribution has their own package manager and package format. For Debian it's apt and .deb. Debian packaging is quite interesting, there's a fair bit of information that is included in a Debian source package.
 This page deals with updating a Debian package to a new upstream release.

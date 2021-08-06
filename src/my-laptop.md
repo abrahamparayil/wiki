@@ -1,8 +1,5 @@
----
-title: "My Laptop a.k.a My Baby"
-date: 2020-08-10T05:54:15+05:30
-draft: false
----
+# My Laptop a.k.a My Baby
+
 I assure you we do not have an unhealthy relationship. This is just my Baby. My first laptop. This machine has been through thick and thin. It has almost never let me down. I mean everyone messes up once or twice. This laptop is what a smartphone is to most people my age.
 
 - Name: Aspire F15
